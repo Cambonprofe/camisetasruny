@@ -1,0 +1,14 @@
+<ul id="lista"></ul>
+
+<script>
+let datos = JSON.parse(localStorage.getItem("historial"));
+
+datos.forEach(item => {
+  let li = document.createElement("li");
+  li.textContent = item;
+  document.getElementById("lista").appendChild(li);
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<button onclick="generarPDF()">Descargar PDF</button>
