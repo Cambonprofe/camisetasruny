@@ -1,0 +1,196 @@
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+}
+
+.preheader{
+    background: #4CAF50;
+    color:white;
+    text-align:center;
+    padding:10px;
+    font-weight:bold;
+}
+
+.logo{
+    width: 100px;
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:20px auto;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px;
+    background:#eee;
+}
+
+.navbar a{
+    margin-right:15px;
+    text-decoration:none;
+    color:black;
+}
+
+.main {
+    flex: 3;
+    text-align: center;
+    padding: 20px;
+}
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    padding:15px;
+    width:220px;
+    text-align:center;
+    transition: transform 0.2s;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card img{
+    width:150px;
+    height:150px;
+    object-fit:contain;
+}
+
+.card h3{
+    margin:10px 0;
+}
+
+.card p{
+    margin:5px 0;
+}
+
+button{
+    padding:5px 10px;
+    margin:3px;
+    cursor:pointer;
+}
+
+
+.form-container{
+    background:white;
+    padding:20px;
+    margin:20px auto;
+    width:80%;
+    max-width:800px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-producto{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+}
+
+.form-producto input{
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    width:150px;
+}
+
+.form-producto button{
+    background:#4CAF50;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.form-producto button:hover{
+    background:#45a049;
+}
+
+.layout {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    align-self: flex-start;
+    font-size: 13px;
+}
+
+.sidebar h3 {
+    color: #4CAF50;
+    margin-top: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.sidebar ul li a:hover {
+    color: #4CAF50;
+}
+
+.bienvenida, .destacado {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #45a049;
+}

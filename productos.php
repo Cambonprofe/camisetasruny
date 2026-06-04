@@ -76,7 +76,7 @@ $productos = Producto::getAll();
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -89,6 +89,14 @@ $productos = Producto::getAll();
     <div>
         <a href="index.php">Inicio</a>
         <a href="productos.php">Productos</a>
+        <a href="clientes.php">Clientes</a>
+        <?php if ($user && $user['rol'] === 'cliente'): ?>
+    <a href="carrito.php">🛒 Carrito</a>
+<?php endif; ?>
+        <?php if ($esAdmin): ?>
+            <a href="exportar_excel.php">📥 Exportar a Excel</a>
+            <a href="exportar_pdf.php">📄 Exportar a PDF</a>
+        <?php endif; ?>
     </div>
 
     <div>
@@ -137,11 +145,17 @@ $productos = Producto::getAll();
     <p><?= htmlspecialchars($p['descripcion']) ?></p>
     <p><b>$<?= $p['precio'] ?></b></p>
     <p>Stock: <?= $p['stock'] ?></p>
+    <?php if ($user && $user['rol'] === 'cliente'): ?>
+    <form method="POST" action="carrito.php">
+        <input type="hidden" name="producto_id" value="<?= $p['id'] ?>">
+        <button name="agregar">🛒 Agregar al carrito</button>
+    </form>
+<?php endif; ?>
 
     <?php if ($esAdmin): ?>
         <form method="POST">
             <input type="hidden" name="id" value="<?= $p['id'] ?>">
-            <button name="eliminar">Eliminar</button>
+        <button name="eliminar" onclick="return confirmarEliminar()">Eliminar</button>
         </form>
 
         <form method="POST" enctype="multipart/form-data">
@@ -164,6 +178,13 @@ $productos = Producto::getAll();
 <?php endwhile; ?>
 
 </div>
+<script>
+    function confirmarEliminar() {
+        return confirm("¿Estás seguro que querés eliminar este producto?");
+    }
+</script>
 
+</body>
+</html>
 </body>
 </html>
